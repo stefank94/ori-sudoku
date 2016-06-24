@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a816a703-2486-411c-a2d6-c14c13fa05dc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samo_za_isprobavanje.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_001.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_002.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_003.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_004.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_005.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_006.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_007.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_008.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_009.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_010.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_011.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_012.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_013.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_014.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_015.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_016.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_017.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_018.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_019.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_020.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_021.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_022.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_023.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_024.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_025.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_026.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_027.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_028.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_029.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_030.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_031.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_032.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_033.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_034.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_035.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_036.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_037.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_038.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_039.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_040.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_041.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_042.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_043.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_044.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_045.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_046.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_047.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_048.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_049.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_050.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_051.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_052.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_053.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_054.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_055.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_056.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_057.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_058.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_059.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/easy/sudoku_easy_060.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_001.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_002.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_003.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_004.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_005.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_006.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_007.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_008.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_009.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_010.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_011.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_012.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_013.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_014.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_015.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_016.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_017.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_018.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_019.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_020.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_021.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_022.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_023.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_024.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_025.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_026.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_027.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_028.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_029.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_030.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_031.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_032.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_033.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_034.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_035.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_036.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_037.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_038.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_039.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_040.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_041.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_042.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_043.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_044.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_045.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_046.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_047.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_048.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_049.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_050.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_051.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_052.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_053.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_054.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_055.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_056.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_057.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_058.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_059.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/hard/sudoku_hard_060.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_001.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_002.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_003.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_004.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_005.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_006.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_007.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_008.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_009.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_010.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_011.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_012.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_013.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_014.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_015.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_016.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_017.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_018.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_019.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_020.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_021.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_022.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_023.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_024.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_025.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_026.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_027.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_028.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_029.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_030.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_031.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_032.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_033.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_034.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_035.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_036.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_037.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_038.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_039.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_040.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_041.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_042.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_043.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_044.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_045.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_046.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_047.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_048.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_049.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_050.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_051.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_052.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_053.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_054.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_055.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_056.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_057.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_058.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_059.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slike/medium/sudoku_medium_060.gif" afterPath="" />
+    </list>
+    <ignored path="ori-sudoku.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/ori-sudoku$samo_za_isprobavanje.coverage" NAME="samo_za_isprobavanje Coverage Results" MODIFIED="1466785320541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ori-sudoku" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="images.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="samo_za_isprobavanje.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/samo_za_isprobavanje.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/samo_za_isprobavanje.py" />
+        <option value="$PROJECT_DIR$/images.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ori-sudoku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ori-sudoku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ori-sudoku" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Python.samo_za_isprobavanje">
+    <configuration default="false" name="samo_za_isprobavanje" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/samo_za_isprobavanje.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="ori-sudoku" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ori-sudoku" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.samo_za_isprobavanje" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.samo_za_isprobavanje" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a816a703-2486-411c-a2d6-c14c13fa05dc" name="Default" comment="" />
+      <created>1466784646306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1466784646306</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/samo_za_isprobavanje.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
