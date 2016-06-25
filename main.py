@@ -8,10 +8,11 @@ from keras.models import Sequential
 from keras.layers.core import Dense, Activation
 from keras.optimizers import SGD
 from keras.utils import np_utils
+from keras.callbacks import EarlyStopping
 
 
 
-nb_epoch = 20
+nb_epoch = 1000
 X_train = load_train_x_set()
 Y_train = load_train_y_set()
 X_test = load_test_x_set()
@@ -40,11 +41,13 @@ sgd = SGD(lr=0.01)
 # kompajliranje modela (Theano) - optimizacija svih matematickih izraza
 model.compile(loss='mse', optimizer=sgd)
 
+early_stopping = EarlyStopping(monitor='val_loss', patience=2)
+
 # obucavanje neuronske mreze
-model.fit(X_train, Y_train, batch_size=10, nb_epoch=nb_epoch, show_accuracy=True, validation_data=(X_test, Y_test))
+model.fit(X_train, Y_train, nb_epoch=nb_epoch, validation_data=(X_test, Y_test), callbacks=[early_stopping])
 
 # nakon obucavanje testiranje
-score = model.evaluate(X_test, Y_test, show_accuracy=True)
-print('Test score:', score[0])
-print('Test accuracy:', score[1])
+score = model.evaluate(X_test, Y_test)
+print('Test score:', score)
+#print('Test accuracy:', score[1])
 
