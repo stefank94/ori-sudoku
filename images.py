@@ -59,7 +59,7 @@ def load_y_set(od, do):
         for line in file:
             chars = line.strip().split(' ')
             for char in chars:
-                x = int(char)
+                x = float(char) / 9
                 list[i, j] = x
                 j += 1
         i += 1
@@ -69,7 +69,7 @@ def load_y_set(od, do):
         for line in file:
             chars = line.strip().split(' ')
             for char in chars:
-                x = int(char)
+                x = float(char) / 9
                 list[i, j] = x
                 j += 1
         i += 1
@@ -79,7 +79,7 @@ def load_y_set(od, do):
         for line in file:
             chars = line.strip().split(' ')
             for char in chars:
-                x = int(char)
+                x = float(char) / 9
                 list[i, j] = x
                 j += 1
         i += 1
