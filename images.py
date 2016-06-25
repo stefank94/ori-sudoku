@@ -2,6 +2,16 @@ import numpy as np
 import cv2
 
 
+def get_one_image():
+    list = np.zeros((1, 90000))
+    img = cv2.imread("slike/easy/sudoku_easy_010.jpg", 0)
+    data = np.asarray(img, dtype="uint8")
+    list[0, :] = data.ravel()
+    list = list.reshape(1, 90000)
+    list = list.astype("float32")
+    list /= 255
+    return list
+
 def load_train_x_set():
     return load_x_set(1,51)
 

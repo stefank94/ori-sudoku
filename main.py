@@ -12,7 +12,7 @@ from keras.callbacks import EarlyStopping
 
 
 
-nb_epoch = 20
+nb_epoch = 200
 X_train = load_train_x_set()
 Y_train = load_train_y_set()
 X_test = load_test_x_set()
@@ -24,6 +24,9 @@ X_test = X_test.reshape(30, 90000)
 
 X_train = X_train.astype("float32")
 X_test = X_test.astype("float32")
+
+X_train /= 255
+X_test /= 255
 
 print(X_train.shape[0], 'train samples')
 print(X_test.shape[0], 'test samples')
@@ -44,10 +47,14 @@ model.compile(loss='mse', optimizer=sgd)
 early_stopping = EarlyStopping(monitor='val_loss', patience=2)
 
 # obucavanje neuronske mreze
-model.fit(X_train, Y_train, nb_epoch=nb_epoch, validation_data=(X_test, Y_test), callbacks=[early_stopping])
+histroy = model.fit(X_train, Y_train, batch_size=10, nb_epoch=nb_epoch, verbose=1, validation_split=0.2, validation_data=(X_test, Y_test), callbacks=[early_stopping])
 
 # nakon obucavanje testiranje
 score = model.evaluate(X_test, Y_test)
 print('Test score:', score)
 #print('Test accuracy:', score[1])
+predictions = model.predict(get_one_image(), verbose = 1)
+predictions *= 9
+predictions = predictions.round(decimals=0)
+print(predictions)
 
