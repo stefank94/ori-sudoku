@@ -12,7 +12,7 @@ from keras.callbacks import EarlyStopping
 
 
 
-nb_epoch = 1000
+nb_epoch = 200
 X_train = load_train_x_set()
 Y_train = load_train_y_set()
 X_test = load_test_x_set()
