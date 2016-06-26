@@ -27,7 +27,7 @@ print("y_train original shape", y_train.shape)
 #stampa primere slika
 '''for i in range(9):
     plt.subplot(3,3,i+1)
-    plt.imshow(X_train[i], cmap='gray', interpolation='none')
+    plt.imshow(X_train[i+19], cmap='gray', interpolation='none')
     plt.title("Class {}".format(y_train[i]))'''
 
 '''Our neural-network is going to take a single vector for each training example, 
@@ -42,6 +42,10 @@ X_test /= 255
 print("Training matrix shape", X_train.shape)
 print("Testing matrix shape", X_test.shape)
 
+x = get_image_for_learning()
+for i in range(len(x)):
+    X_train = np.vstack([X_train, x[i][0]])
+
 #Modify the target matrices to be in the one-hot format
 ''' 0 -> [1, 0, 0, 0, 0, 0, 0, 0, 0]
     1 -> [0, 1, 0, 0, 0, 0, 0, 0, 0]
@@ -49,6 +53,11 @@ print("Testing matrix shape", X_test.shape)
     etc.'''
 Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
+
+
+y = [2,4,5,3,2,4,6,9,9,3,5,6,5,9,7,3,4,1,7,8,8,2,7,4,5,5,8,3,1,6,2,1]
+y = np_utils.to_categorical(y, nb_classes)
+Y_train = np.vstack([Y_train, y])
 
 #3 layer fully connected network
 model = Sequential()
@@ -74,8 +83,8 @@ if test_only:
     model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
 else:
     model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-    model.fit(X_train, Y_train, show_accuracy=True,
-          batch_size=128, nb_epoch=10, verbose=0,
+    model.fit(X_train, Y_train,
+          batch_size=128, nb_epoch=20, verbose=0,
           validation_data=(X_test, Y_test))
 
 score = model.evaluate(X_test, Y_test, verbose=0)
