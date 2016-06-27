@@ -39,12 +39,16 @@ X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
 X_train /= 255
 X_test /= 255
-print("Training matrix shape", X_train.shape)
-print("Testing matrix shape", X_test.shape)
-
-x = get_image_for_learning()
-for i in range(len(x)):
-    X_train = np.vstack([X_train, x[i][0]])
+    
+#ucitavanje nasih slika    
+if test_only==False:
+    tables = get_images_for_learning()
+    for j in xrange(len(tables)):
+        x = tables[j]
+        print(j)
+        for i in xrange(len(x)):
+            X_train = np.vstack([X_train, x[i][0]])
+    
 
 #Modify the target matrices to be in the one-hot format
 ''' 0 -> [1, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -54,10 +58,16 @@ for i in range(len(x)):
 Y_train = np_utils.to_categorical(y_train, nb_classes)
 Y_test = np_utils.to_categorical(y_test, nb_classes)
 
+#ucitavanje tacnih klasa nasih slika    
+if test_only==False:
+    tables = get_classes()
+    for i in xrange(len(tables)):
+        y = tables[i]
+        y = np_utils.to_categorical(y, nb_classes)
+        Y_train = np.vstack([Y_train, y])
 
-y = [2,4,5,3,2,4,6,9,9,3,5,6,5,9,7,3,4,1,7,8,8,2,7,4,5,5,8,3,1,6,2,1]
-y = np_utils.to_categorical(y, nb_classes)
-Y_train = np.vstack([Y_train, y])
+print("Training matrix shape", X_train.shape)
+print("Testing matrix shape", X_test.shape)
 
 #3 layer fully connected network
 model = Sequential()
