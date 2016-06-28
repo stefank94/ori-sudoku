@@ -2,8 +2,8 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-def get_one_image():
-    img = cv2.imread("slike/hard/sudoku_hard_011.jpg", 0)
+def get_one_image(path):
+    img = cv2.imread(path, 0)
     img = inverte(img)
     data = np.asarray(img, dtype="uint8")
     numbers = [None]*81

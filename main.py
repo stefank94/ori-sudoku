@@ -1,144 +1,160 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jun 26 12:42:40 2016
-
-@author: Sebastijan
-"""
-from images import *
-import numpy as np
-import cv2
-import matplotlib.pyplot as plt
-plt.rcParams['figure.figsize'] = (7,7) # Make the figures a bit bigger
-
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers.core import Dense, Dropout, Activation
-from keras.utils import np_utils
-
-nb_classes = 10
-
-save_weights = False #da li da sacuvamo tezine
-test_only = True  # da li samo vec obucili mrezu
-
-# the data, shuffled and split between tran and test sets
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-print("X_train original shape", X_train.shape)
-print("y_train original shape", y_train.shape)
-#stampa primere slika
-'''for i in range(9):
-    plt.subplot(3,3,i+1)
-    plt.imshow(X_train[i+19], cmap='gray', interpolation='none')
-    plt.title("Class {}".format(y_train[i]))'''
-
-'''Our neural-network is going to take a single vector for each training example, 
-so we need to reshape the input so that each 28x28 image becomes a single 784 dimensional vector.
- We'll also scale the inputs to be in the range [0-1] rather than [0-255]'''
-X_train = X_train.reshape(60000, 784)
-X_test = X_test.reshape(10000, 784)
-X_train = X_train.astype('float32')
-X_test = X_test.astype('float32')
-X_train /= 255
-X_test /= 255
-    
-#ucitavanje nasih slika    
-if test_only==False:
-    tables = get_images_for_learning()
-    for j in xrange(len(tables)):
-        x = tables[j]
-        print(j)
-        for i in xrange(len(x)):
-            X_train = np.vstack([X_train, x[i][0]])
-    
-
-#Modify the target matrices to be in the one-hot format
-''' 0 -> [1, 0, 0, 0, 0, 0, 0, 0, 0]
-    1 -> [0, 1, 0, 0, 0, 0, 0, 0, 0]
-    2 -> [0, 0, 1, 0, 0, 0, 0, 0, 0]
-    etc.'''
-Y_train = np_utils.to_categorical(y_train, nb_classes)
-Y_test = np_utils.to_categorical(y_test, nb_classes)
-
-#ucitavanje tacnih klasa nasih slika    
-if test_only==False:
-    tables = get_classes()
-    for i in xrange(len(tables)):
-        y = tables[i]
-        y = np_utils.to_categorical(y, nb_classes)
-        Y_train = np.vstack([Y_train, y])
-
-print("Training matrix shape", X_train.shape)
-print("Testing matrix shape", X_test.shape)
-
-#3 layer fully connected network
-model = Sequential()
-model.add(Dense(512, input_shape=(784,)))
-model.add(Activation('relu')) # An "activation" is just a non-linear function applied to the output
-                              # of the layer above. Here, with a "rectified linear unit",
-                              # we clamp all values below 0 to 0.
-
-model.add(Dropout(0.2))   # Dropout helps protect the model from memorizing or "overfitting" the training data
-model.add(Dense(512))
-model.add(Activation('relu'))
-model.add(Dropout(0.2))
-model.add(Dense(10))
-model.add(Activation('softmax')) # This special "softmax" activation among other things,
-                                 # ensures the output is a valid probaility distribution, that is
-                                 # that its values are all non-negative and sum to 1.
+import network
+from Tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, Menu
+import tkFileDialog
 
 
 
-# ucitavanje snimljenih tezina iz prethodnog obucavanja
-if test_only:
-    model.load_weights('weights/tezine.hdf5')
-    model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-else:
-    model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-    model.fit(X_train, Y_train,
-          batch_size=128, nb_epoch=20, verbose=0,
-          validation_data=(X_test, Y_test))
+MARGIN = 20
+SIDE = 50  # Sirrina celije
+WIDTH = HEIGHT = MARGIN * 2 + SIDE * 9  # Sirina i visina cele table
 
-score = model.evaluate(X_test, Y_test, verbose=0)
-print('Test score:', score[0])
-print('Test accuracy:', score[1])
 
-if save_weights:
-    model.save_weights('weights/tezine.hdf5', overwrite=True)
+class SudokuUI(Frame):
+    def __init__(self, parent, game):
+        self.game = game
+        Frame.__init__(self, parent)
+        self.parent = parent
 
-matrix = np.zeros((81))
-numbers = get_one_image()
+        self.row, self.col = -1, -1
 
-for i in xrange(0,81):
-    if sum(numbers[i][0]) < 5:
-        matrix[i] = 0
-    else:
-        predicted = model.predict_classes(numbers[i], verbose = 0)
-        matrix[i] = predicted
-    #predict = model.predict_proba(get_one_image())
-    #print(predict)
-    #print(max(predict[0]))
-matrix = matrix.reshape((9, 9))
-print(matrix)
+        self.__initUI()
 
-'''
-#provera sta je dobro predvideo a sta nije(stampa primere)
-# The predict_classes function outputs the highest probability class
-# according to the trained classifier for each input example.
-predicted_classes = model.predict_classes(X_test)
+    def __initUI(self):
+        self.parent.title("Sudoku")
+        self.pack(fill=BOTH)
+        self.canvas = Canvas(self,
+                             width=WIDTH,
+                             height=HEIGHT)
+        self.canvas.pack(fill=BOTH, side=TOP)
+        
+        menubar = Menu(self.parent)
+        
+        # create a pulldown menu, and add it to the menu bar
+        filemenu = Menu(menubar, tearoff=0)
+        filemenu.add_command(label="Open", command=self.__open)
+        menubar.add_cascade(label="File", menu=filemenu)        
 
-# Check which items we got right / wrong
-correct_indices = np.nonzero(predicted_classes == y_test)[0]
-incorrect_indices = np.nonzero(predicted_classes != y_test)[0]
+        self.parent.config(menu=menubar)        
+        
+        clear_button = Button(self,
+                              text="Clear answers",
+                              command=self.__clear_answers)
+        clear_button.pack(fill=BOTH, side=BOTTOM)
+        
 
-plt.figure()
-for i, correct in enumerate(correct_indices[:9]):
-    plt.subplot(3,3,i+1)
-    plt.imshow(X_test[correct].reshape(28,28), cmap='gray', interpolation='none')
-    plt.title("Predicted {}, Class {}".format(predicted_classes[correct], y_test[correct]))
-    
-plt.figure()
-for i, incorrect in enumerate(incorrect_indices[:9]):
-    plt.subplot(3,3,i+1)
-    plt.imshow(X_test[incorrect].reshape(28,28), cmap='gray', interpolation='none')
-    plt.title("Predicted {}, Class {}".format(predicted_classes[incorrect], y_test[incorrect]))
-'''
+        self.__draw_grid()
+        self.__draw_puzzle()
 
+        self.canvas.bind("<Button-1>", self.__cell_clicked)
+        self.canvas.bind("<Key>", self.__key_pressed)
+        
+
+    def __open(self):
+        self.file_opt = options = {}
+        options['defaultextension'] = '.jpg'
+        options['filetypes'] = [('image files', '.jpg'),('all files', '.*') ]
+        options['initialdir'] = 'C:\\'
+        self.file_path = tkFileDialog.askopenfilename(**self.file_opt)
+        matrix = network.predict(self.file_path)
+        self.game.start_puzzle = matrix
+        self.game.start()
+        self.__clear_answers()
+
+
+    def __draw_grid(self):
+        """
+        Draws grid divided with blue lines into 3x3 squares
+        """
+        for i in xrange(10):
+            color = "blue" if i % 3 == 0 else "gray"
+
+            x0 = MARGIN + i * SIDE
+            y0 = MARGIN
+            x1 = MARGIN + i * SIDE
+            y1 = HEIGHT - MARGIN
+            self.canvas.create_line(x0, y0, x1, y1, fill=color)
+
+            x0 = MARGIN
+            y0 = MARGIN + i * SIDE
+            x1 = WIDTH - MARGIN
+            y1 = MARGIN + i * SIDE
+            self.canvas.create_line(x0, y0, x1, y1, fill=color)
+
+    def __draw_puzzle(self):
+        self.canvas.delete("numbers")
+        for i in xrange(9):
+            for j in xrange(9):
+                answer = self.game.puzzle[i][j]
+                if answer != 0:
+                    x = MARGIN + j * SIDE + SIDE / 2
+                    y = MARGIN + i * SIDE + SIDE / 2
+                    color = "black"
+                    self.canvas.create_text(
+                        x, y, text=answer, tags="numbers", fill=color
+                    )
+
+    def __draw_cursor(self):
+        self.canvas.delete("cursor")
+        if self.row >= 0 and self.col >= 0:
+            x0 = MARGIN + self.col * SIDE + 1
+            y0 = MARGIN + self.row * SIDE + 1
+            x1 = MARGIN + (self.col + 1) * SIDE - 1
+            y1 = MARGIN + (self.row + 1) * SIDE - 1
+            self.canvas.create_rectangle(
+                x0, y0, x1, y1,
+                outline="red", tags="cursor"
+            )
+
+    def __cell_clicked(self, event):
+        x, y = event.x, event.y
+        if (MARGIN < x < WIDTH - MARGIN and MARGIN < y < HEIGHT - MARGIN):
+            self.canvas.focus_set()
+            
+            # get row and col numbers from x,y coordinates
+            row, col = (y - MARGIN) / SIDE, (x - MARGIN) / SIDE
+            
+            # if cell was selected already - deselect it
+            if (row, col) == (self.row, self.col):
+                self.row, self.col = -1, -1
+            else:
+                self.row, self.col = row, col
+        else:
+            self.row, self.col = -1, -1
+        self.__draw_cursor()
+
+    def __key_pressed(self, event):
+        if self.row >= 0 and self.col >= 0 and event.char in "1234567890":
+            try:
+                self.game.puzzle[self.row][self.col] = int(event.char)
+                self.col, self.row = -1, -1
+                self.__draw_puzzle()
+                self.__draw_cursor()
+            except (RuntimeError, TypeError, ValueError):
+                pass
+
+    def __clear_answers(self):
+        self.game.start()
+        self.__draw_puzzle()
+
+class SudokuGame(object):
+    def __init__(self):
+        self.start_puzzle = [[0]*9]*9
+
+    def start(self):
+        self.puzzle = []
+        for i in xrange(9):
+            self.puzzle.append([])
+            for j in xrange(9):
+                self.puzzle[i].append(self.start_puzzle[i][j])
+        
+
+
+if __name__ == '__main__':
+    network.learn()
+    game = SudokuGame()
+    game.start()
+
+    root = Tk()
+    gui = SudokuUI(root, game)
+    root.geometry("%dx%d" % (WIDTH, HEIGHT + 40))
+    root.mainloop()
