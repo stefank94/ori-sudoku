@@ -1,6 +1,8 @@
 import network
-from Tkinter import Tk, Canvas, Frame, Button, BOTH, TOP, BOTTOM, Menu
+from Tkinter import *
 import tkFileDialog
+from SudokuSolverBacktracking import BacktrackingSudokuSolver
+import copy
 
 
 
@@ -21,7 +23,7 @@ class SudokuUI(Frame):
 
     def __initUI(self):
         self.parent.title("Sudoku")
-        self.pack(fill=BOTH)
+        self.pack(fill=BOTH, expand = YES)
         self.canvas = Canvas(self,
                              width=WIDTH,
                              height=HEIGHT)
@@ -34,13 +36,20 @@ class SudokuUI(Frame):
         filemenu.add_command(label="Open", command=self.__open)
         menubar.add_cascade(label="File", menu=filemenu)        
 
-        self.parent.config(menu=menubar)        
+        self.parent.config(menu=menubar)    
+        
+        solve_button = Button(self,text= "Solve sudoku",
+                              command = self.__solve_sudoku)
+                              
+        solve_button.pack(fill= X,side = LEFT, anchor = W, expand = YES)
+        
         
         clear_button = Button(self,
                               text="Clear answers",
                               command=self.__clear_answers)
-        clear_button.pack(fill=BOTH, side=BOTTOM)
+        clear_button.pack(fill= X, side=LEFT, anchor = W, expand = YES)
         
+       
 
         self.__draw_grid()
         self.__draw_puzzle()
@@ -80,18 +89,25 @@ class SudokuUI(Frame):
             y1 = MARGIN + i * SIDE
             self.canvas.create_line(x0, y0, x1, y1, fill=color)
 
-    def __draw_puzzle(self):
+    def __draw_puzzle(self,solved_puzzle=None):
         self.canvas.delete("numbers")
         for i in xrange(9):
             for j in xrange(9):
-                answer = self.game.puzzle[i][j]
-                if answer != 0:
+                if solved_puzzle is not None:
+                    answer = solved_puzzle[i][j]
+                    color = self.determine_solved_numbers(i,j)
                     x = MARGIN + j * SIDE + SIDE / 2
                     y = MARGIN + i * SIDE + SIDE / 2
-                    color = "black"
-                    self.canvas.create_text(
-                        x, y, text=answer, tags="numbers", fill=color
-                    )
+                    self.canvas.create_text(x, y, text=answer, tags="numbers", fill=color)
+                else:
+                    answer = self.game.puzzle[i][j]
+                    if answer != 0:
+                        x = MARGIN + j * SIDE + SIDE / 2
+                        y = MARGIN + i * SIDE + SIDE / 2
+                        color = "black"
+                        self.canvas.create_text(
+                            x, y, text=answer, tags="numbers", fill=color)
+                        
 
     def __draw_cursor(self):
         self.canvas.delete("cursor")
@@ -135,6 +151,19 @@ class SudokuUI(Frame):
     def __clear_answers(self):
         self.game.start()
         self.__draw_puzzle()
+        
+    
+    def __solve_sudoku(self):
+         self.unsolved_puzzle = copy.deepcopy(self.game.puzzle)
+         backtracking_solver = BacktrackingSudokuSolver(self.game.puzzle)
+         backtracking_solver.solve()
+         self.__draw_puzzle(backtracking_solver.sudoku_matrix)
+         
+    def determine_solved_numbers(self,row,column):
+        print (self.unsolved_puzzle[row][column])
+        if (self.unsolved_puzzle[row][column] == 0):
+            return "red"
+        return "black"
 
 class SudokuGame(object):
     def __init__(self):
