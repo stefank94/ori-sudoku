@@ -3,14 +3,55 @@ import cv2
 import copy
 import math
 
+def comp(crit,najmanji,x1,x2):
+    if crit == "w" and najmanji == True:
+        if x1[0] > x2[0]:
+            return True
+        return False
+    elif crit == "w" and najmanji == False:
+        if x1[0] < x2[0]:
+            return True
+        return False
+    elif crit == "h" and najmanji == True:
+        if x1[1] > x2[1]:
+            return True
+        return False
+    elif crit == "h" and najmanji == False:
+        if x1[1] < x2[1]:
+            return True
+        return False
+    else:
+        return None
+
+def najmanji(crit,najmanji,lista):
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(1,len(lista)):
+            if comp(crit,najmanji,lista[i-1],lista[i]):
+                lista[i-1], lista[i] = lista[i], lista[i-1]
+                swapped = True
+    return lista
+        
+
 def get_size(biggest):
-    width_gore = biggest[0][0][0] - biggest[1][0][0]
-    width_dole = biggest[3][0][0] - biggest[2][0][0]
-    height_levo = biggest[2][0][1] - biggest[1][0][1]
-    height_desno = biggest[3][0][1] - biggest[0][0][1]
+    sorted_by_width_asc = najmanji("w", True, [ biggest[0][0], biggest[1][0], biggest[2][0], biggest[3][0] ])
+    sorted_by_height_asc = najmanji("h", True, [ biggest[0][0], biggest[1][0], biggest[2][0], biggest[3][0] ])
+    gl = sorted_by_width_asc[3] if sorted_by_width_asc[3][1] < sorted_by_width_asc[2][1] else sorted_by_width_asc[2]
+    dl = sorted_by_width_asc[3] if sorted_by_width_asc[3][1] > sorted_by_width_asc[2][1] else sorted_by_width_asc[2]
+    gd = sorted_by_width_asc[0] if sorted_by_width_asc[0][1] < sorted_by_width_asc[1][1] else sorted_by_width_asc[1]
+    dd = sorted_by_width_asc[0] if sorted_by_width_asc[0][1] > sorted_by_width_asc[1][1] else sorted_by_width_asc[1]
+    #width_gore = abs(biggest[0][0][0] - biggest[1][0][0])
+    #width_dole = abs(biggest[3][0][0] - biggest[2][0][0])
+    #height_levo = abs(biggest[2][0][1] - biggest[1][0][1])
+    #height_desno = abs(biggest[3][0][1] - biggest[0][0][1])
+    width_gore = abs(gd[0] - gl[0])
+    width_dole = abs(dd[0] - dl[0])
+    height_levo = abs(dl[1] - gl[1])
+    height_desno = abs(dd[1] - gd[1])
     width = width_gore if width_gore > width_dole else width_dole
     height = height_levo if height_levo > height_desno else height_desno
-    return (width, height)
+    return ([gl,gd,dl,dd],width, height)
     
 def find_index(lines, l):
     for i in range(len(lines)):
@@ -21,13 +62,19 @@ def find_index(lines, l):
     
 # --------------------------------------------------------------
 
-img = cv2.imread('slike/photos/1.jpg', 0)
+img = cv2.imread('slike/photos/4/3.jpg', 0)
 #img = cv2.imread('C:/Users/Stefan/Desktop/2.jpg', 0)
 #img = cv2.imread("slike/hard/sudoku_hard_010.jpg", 0)
 cv2.imshow('image', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+h, w = img.shape
+ratio =  h / w
+img= cv2.resize(img,(500, 500 * ratio),interpolation=cv2.INTER_AREA)
+cv2.imshow('image', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 img = cv2.GaussianBlur(img,(5,5),0)
 cv2.imshow('image', img)
@@ -52,18 +99,18 @@ for i in contours:
                         max_area = area
                 
 # Prikaz pronadjenih uglova table
-#cv2.circle(img,(biggest[0][0][0], biggest[0][0][1]), 10, (255,0,0), 1) # gore desno
-#cv2.circle(img,(biggest[1][0][0], biggest[1][0][1]), 10, (255,0,0), 1) # gore levo
-#cv2.circle(img,(biggest[2][0][0], biggest[2][0][1]), 10, (255,0,0), 1) # dole levo
-#cv2.circle(img,(biggest[3][0][0], biggest[3][0][1]), 10, (255,0,0), 1) # dole desno
-#cv2.imshow('image', img)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
+cv2.circle(img,(biggest[0][0][0], biggest[0][0][1]), 10, (255,0,0), 1) # gore desno
+cv2.circle(img,(biggest[1][0][0], biggest[1][0][1]), 10, (255,0,0), 1) # gore levo
+cv2.circle(img,(biggest[2][0][0], biggest[2][0][1]), 10, (255,0,0), 1) # dole levo
+cv2.circle(img,(biggest[3][0][0], biggest[3][0][1]), 10, (255,0,0), 1) # dole desno
+cv2.imshow('image', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
-
-s_width, s_height = get_size(biggest)
-print (biggest[0][0])
-pts1 = np.float32([biggest[1][0], biggest[0][0], biggest[2][0], biggest[3][0]])
+print(biggest)
+lista, s_width, s_height = get_size(biggest)
+print (s_width, s_height)
+pts1 = np.float32([lista[1], lista[0], lista[3], lista[2]])
 pts2 = np.float32([[0,0],[s_width, 0],[0, s_height],[s_width, s_height]])
 
 M = cv2.getPerspectiveTransform(pts1,pts2)
@@ -77,7 +124,7 @@ img = cv2.resize(img, (300,300), interpolation = cv2.INTER_AREA)
 cv2.imshow('image', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
+"""
 blank_image = np.ones((300,300,3), np.uint8)
 
 
@@ -156,7 +203,7 @@ cv2.imshow('image', blank_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
+"""
 
 
 
