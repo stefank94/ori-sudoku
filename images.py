@@ -3,6 +3,7 @@ import cv2
 import matplotlib.pyplot as plt
 import copy
 
+
 def get_one_photo():
     #img = cv2.imread("slike/hard/sudoku_hard_052.jpg", 0)
     #img = cv2.imread("slike/photos/5.jpg", 0)
@@ -17,9 +18,9 @@ def get_one_photo():
             num = num[4:32, 4:32]
             numbers[counter] = num
             counter += 1
-   # for i in range(81):
-    #    plt.subplot(9,9,i+1)
-     #   plt.imshow(numbers[i], cmap='gray', interpolation='none') #stampa celu tablu
+    for i in range(81):
+        plt.subplot(9,9,i+1)
+        plt.imshow(numbers[i], cmap='gray', interpolation='none') #stampa celu tablu
     
     for i in range(81):
         num = numbers[i]
@@ -29,6 +30,7 @@ def get_one_photo():
         numbers[i] = num
     return numbers
     
+
 def get_one_image(path):
     img = cv2.imread(path, 0)
     img = inverte(img)
@@ -41,9 +43,9 @@ def get_one_image(path):
             num = num[4:32, 4:32]
             numbers[counter] = num
             counter += 1
-   # for i in range(81):
-    #    plt.subplot(9,9,i+1)
-     #   plt.imshow(numbers[i], cmap='gray', interpolation='none') #stampa celu tablu
+    for i in range(81):
+        plt.subplot(9,9,i+1)
+        plt.imshow(numbers[i], cmap='gray', interpolation='none') #stampa celu tablu
     
     for i in range(81):
         num = numbers[i]
