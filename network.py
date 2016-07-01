@@ -23,8 +23,8 @@ def learn():
     global model
     nb_classes = 10
     
-    save_weights = True #da li da sacuvamo tezine
-    test_only = False  # da li samo vec obucili mrezu
+    save_weights = False #da li da sacuvamo tezine
+    test_only = True  # da li samo vec obucili mrezu
     
     if not test_only:
             (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -180,7 +180,7 @@ def learn():
     else:
         early_stopping = EarlyStopping(monitor='val_loss', patience=2)
         model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-        model.fit(X_train, Y_train, batch_size=128, nb_epoch=12, verbose=0, validation_data=(X_test, Y_test), callbacks=[early_stopping])
+        model.fit(X_train, Y_train, batch_size=128, nb_epoch=12, verbose=1, validation_data=(X_test, Y_test), callbacks=[early_stopping])
 			  
         score = model.evaluate(X_test, Y_test, verbose=0)
         print('Test score:', score[0])
