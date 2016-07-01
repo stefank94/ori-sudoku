@@ -51,6 +51,7 @@ def learn():
             		#ucitavanje nasih slika    
             #tables = get_images_for_learning()
             counter, images, solutions = get_stuff_for_learning()
+            print (counter / 81)
             		
             		#print tables.shape
             		# --- Ovo dole 65265 promeniti na 64860 ako izbacis one fotografije iz funkcije get_images_for_learning
@@ -168,7 +169,7 @@ def learn():
     else:
         early_stopping = EarlyStopping(monitor='val_loss', patience=2)
         model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-        model.fit(X_train, Y_train, batch_size=128, nb_epoch=20, verbose=0, validation_data=(X_test, Y_test), callbacks=[early_stopping])
+        model.fit(X_train, Y_train, batch_size=128, nb_epoch=12, verbose=0, validation_data=(X_test, Y_test), callbacks=[early_stopping])
 			  
         score = model.evaluate(X_test, Y_test, verbose=0)
         print('Test score:', score[0])

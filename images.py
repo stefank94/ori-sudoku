@@ -35,9 +35,17 @@ def get_one_file(path):
     nplist[:,:] = numbers
     return nplist
 
+def get_num_of_files():
+    fajlovi = os.listdir("slike/photos")
+    num = 0
+    for fajl in fajlovi:
+        num += 1
+    return num
 
 def get_stuff_for_learning():
-    num_of_photos = len([name for name in os.listdir("slike/photos") if os.path.isfile(name)]) / 2
+    print (os.listdir("slike/photos"))
+    num_of_photos = get_num_of_files() / 2
+    print ("num " + str(num_of_photos))
     #num_of_digits = (num_of_photos + 60) * 81
     #tables = np.zeros((num_of_digits, 784))
     images = []
@@ -86,7 +94,7 @@ def get_stuff_for_learning():
                 #tables[counter, :] = num
                 counter += 1
                 images.append(num)
-        file = open("slike/easy/sudoku_easy_" + s + str(f) + ".dat", "r")
+        file = open("slike/photos/" + str(f) + ".dat", "r")
         list = [None]*81
         j = 0
         for line in file:
