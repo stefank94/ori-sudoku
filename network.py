@@ -51,6 +51,7 @@ def learn():
             		#ucitavanje nasih slika    
             #tables = get_images_for_learning()
             counter, images, solutions = get_stuff_for_learning()
+            t_counter, t_images, t_solutions = get_stuff_for_testing()
             print (counter / 81)
             		
             		#print tables.shape
@@ -66,9 +67,15 @@ def learn():
             
             #n_train, height, width = X_train.shape
             #n_test, _, _ = X_test.shape
-            #X_train = X_train.reshape((68910,1,28,28)).astype('float32')
+            #X_train = X_train.reshape((68910,1,28,28)).astype('float32')           
             X_train = X_train.reshape((60000 + counter,1,28,28)).astype('float32')
-            X_test = X_test.reshape((10000,1,28,28)).astype('float32')
+ 
+            new_X_test = np.zeros((10000 + t_counter, 784))
+            new_X_test[0:10000, :] = X_test
+            new_X_test[10000:10000 + t_counter, :] = t_images
+            X_test = new_X_test
+            
+            X_test = X_test.reshape((10000 + t_counter,1,28,28)).astype('float32')
 			
 		
 		#for j in xrange(len(tables)):
@@ -94,6 +101,10 @@ def learn():
                 y = solutions[i]
                 y = np_utils.to_categorical(y, nb_classes)
                 Y_train = np.vstack([Y_train, y])
+            for i in xrange(len(t_solutions)):
+                y = t_solutions[i]
+                y = np_utils.to_categorical(y, nb_classes)
+                Y_test = np.vstack([Y_test, y])
 
             print("Training matrix shape", X_train.shape)
             print("Testing matrix shape", X_test.shape)

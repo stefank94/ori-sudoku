@@ -35,17 +35,16 @@ def get_one_file(path):
     nplist[:,:] = numbers
     return nplist
 
-def get_num_of_files():
-    fajlovi = os.listdir("slike/photos")
+def get_num_of_files(path):
+    fajlovi = os.listdir(path)
     num = 0
     for fajl in fajlovi:
         num += 1
     return num
 
 def get_stuff_for_learning():
-    print (os.listdir("slike/photos"))
-    num_of_photos = get_num_of_files() / 2
-    print ("num " + str(num_of_photos))
+    num_of_photos = get_num_of_files("slike/photos") / 2
+    print ("num learning " + str(num_of_photos))
     #num_of_digits = (num_of_photos + 60) * 81
     #tables = np.zeros((num_of_digits, 784))
     images = []
@@ -110,6 +109,73 @@ def get_stuff_for_learning():
     np_images.reshape((counter, 784))
     return (counter, np_images, np_solutions)
     
+def get_stuff_for_testing():
+    num_of_photos = get_num_of_files("slike/evaluation") / 2
+    print ("num testing " + str(num_of_photos))
+    #num_of_digits = (num_of_photos + 60) * 81
+    #tables = np.zeros((num_of_digits, 784))
+    images = []
+    solutions = []
+    counter = 0
+    
+    for f in range(1,11):
+        s = "0"
+        if f < 10:
+            s = "00"
+        img = cv2.imread("slike/medium/sudoku_medium_" + s + str(f) + ".jpg", 0)
+        img = inverte(img)
+        data = np.asarray(img, dtype="uint8")               
+        for i in xrange(0,9):       #secemo tablu na 91 sliku
+            for j in xrange(0,9):
+                num = data[i*33:i*33+33, j*33:j*33+33]
+                num = num[4:32, 4:32]
+                num = num.reshape(784)
+                num = num.astype("float32")
+                num /= 255
+                #tables[counter, :] = num
+                counter += 1
+                images.append(num)
+        file = open("slike/medium/sudoku_medium_" + s + str(f) + ".dat", "r")
+        list = [None]*81
+        j = 0
+        for line in file:
+            chars = line.strip().split(' ')
+            for char in chars:
+                x = float(char)
+                list[j] = x
+                j += 1
+        solutions.append(list)
+    
+    for f in range(1, num_of_photos + 1):
+        img = transform_photo("slike/evaluation/" + str(f) + ".jpg")
+        if img is None:
+            continue
+        data = np.asarray(img, dtype="uint8")               
+        for i in xrange(0,9):       #secemo tablu na 91 sliku
+            for j in xrange(0,9):
+                num = data[i*33:i*33+33, j*33:j*33+33]
+                num = num[4:32, 4:32]
+                num = num.reshape(784)
+                num = num.astype("float32")
+                num /= 255
+                #tables[counter, :] = num
+                counter += 1
+                images.append(num)
+        file = open("slike/evaluation/" + str(f) + ".dat", "r")
+        list = [None]*81
+        j = 0
+        for line in file:
+            chars = line.strip().split(' ')
+            for char in chars:
+                x = float(char)
+                list[j] = x
+                j += 1
+        solutions.append(list)
+    
+    np_images = np.array(images)
+    np_solutions = np.array(solutions)
+    np_images.reshape((counter, 784))
+    return (counter, np_images, np_solutions)
    
 def inverte(imagem):
     imagem = (255-imagem)
