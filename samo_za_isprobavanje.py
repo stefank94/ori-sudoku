@@ -62,7 +62,7 @@ def find_index(lines, l):
     
 # --------------------------------------------------------------
 
-img = cv2.imread('slike/photos/4/3.jpg', 0)
+img = cv2.imread('slike/photos/4/1.jpg', 0)
 #img = cv2.imread('C:/Users/Stefan/Desktop/2.jpg', 0)
 #img = cv2.imread("slike/hard/sudoku_hard_010.jpg", 0)
 cv2.imshow('image', img)

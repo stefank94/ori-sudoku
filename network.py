@@ -49,19 +49,24 @@ def learn():
             X_train /= 255
             X_test /= 255
             		#ucitavanje nasih slika    
-            tables = get_images_for_learning()
+            #tables = get_images_for_learning()
+            counter, images, solutions = get_stuff_for_learning()
             		
             		#print tables.shape
             		# --- Ovo dole 65265 promeniti na 64860 ako izbacis one fotografije iz funkcije get_images_for_learning
-            new_X_train = np.zeros((68910, 784))
+              
+            new_X_train = np.zeros((60000 + counter, 784))
+            #new_X_train = np.zeros((68910, 784))
             new_X_train[0:60000, :] = X_train
             		# isto i ovde
-            new_X_train[60000:68910, :] = tables
+            #new_X_train[60000:68910, :] = tables
+            new_X_train[60000:60000 + counter, :] = images
             X_train = new_X_train
             
             #n_train, height, width = X_train.shape
             #n_test, _, _ = X_test.shape
-            X_train = X_train.reshape((68910,1,28,28)).astype('float32')
+            #X_train = X_train.reshape((68910,1,28,28)).astype('float32')
+            X_train = X_train.reshape((60000 + counter,1,28,28)).astype('float32')
             X_test = X_test.reshape((10000,1,28,28)).astype('float32')
 			
 		
@@ -83,9 +88,9 @@ def learn():
 
 		#ucitavanje tacnih klasa nasih slika    
 		#print("Training solution shape", Y_train.shape)
-            tables = get_classes()
-            for i in xrange(len(tables)):
-                y = tables[i]
+            #tables = get_classes()
+            for i in xrange(len(solutions)):
+                y = solutions[i]
                 y = np_utils.to_categorical(y, nb_classes)
                 Y_train = np.vstack([Y_train, y])
 
@@ -163,7 +168,7 @@ def learn():
     else:
         early_stopping = EarlyStopping(monitor='val_loss', patience=2)
         model.compile(loss='categorical_crossentropy', optimizer='adam',  metrics=["accuracy"])
-        model.fit(X_train, Y_train, batch_size=128, nb_epoch=20, verbose=1, validation_data=(X_test, Y_test), callbacks=[early_stopping])
+        model.fit(X_train, Y_train, batch_size=128, nb_epoch=20, verbose=0, validation_data=(X_test, Y_test), callbacks=[early_stopping])
 			  
         score = model.evaluate(X_test, Y_test, verbose=0)
         print('Test score:', score[0])
@@ -171,21 +176,19 @@ def learn():
 
     if save_weights:
         model.save_weights('weights/tezine.hdf5', overwrite=True)
-
-    matrix = np.zeros((81))
-    numbers = get_one_photo()
         
 def predict(path):
 
     matrix = np.zeros(81,dtype=np.uint8)
-    #numbers = get_one_image(path)
-    numbers = get_one_photo()
+    numbers = get_one_file(path)
+    #numbers = get_one_photo()
+    numbers = numbers.reshape((81,1,28,28))
     
     for i in xrange(0,81):
-        if sum(numbers[i][0]) < 3:
+        if np.sum(numbers[i][0]) < 3:
             matrix[i] = 0
         else:
-            predicted = model.predict_classes(numbers[i], verbose = 0)
+            predicted = model.predict_classes(numbers[i].reshape((1,1,28,28)), verbose = 0)
             matrix[i] = predicted
             #print(predicted)
             #print(max(predicted[0]))
