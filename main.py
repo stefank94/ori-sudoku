@@ -1,6 +1,8 @@
 import network
 from Tkinter import *
 import tkFileDialog
+
+from SudokuSolver import SudokuSolver
 from SudokuSolverBacktracking import BacktrackingSudokuSolver
 import copy
 
@@ -155,9 +157,12 @@ class SudokuUI(Frame):
     
     def __solve_sudoku(self):
          self.unsolved_puzzle = copy.deepcopy(self.game.puzzle)
-         backtracking_solver = BacktrackingSudokuSolver(self.game.puzzle)
-         backtracking_solver.solve()
-         self.__draw_puzzle(backtracking_solver.sudoku_matrix)
+         #backtracking_solver = BacktrackingSudokuSolver(self.game.puzzle)
+         #backtracking_solver.solve()
+         dlx_sudoku_solver = SudokuSolver(self.game.puzzle)
+         solutions = dlx_sudoku_solver.solve_sudoku()
+         dlx_sudoku_solver.final_solution(solutions)
+         self.__draw_puzzle(dlx_sudoku_solver.solution_board)
          
     def determine_solved_numbers(self,row,column):
         print (self.unsolved_puzzle[row][column])
